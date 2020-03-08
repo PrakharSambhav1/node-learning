@@ -1,0 +1,15 @@
+{
+  "name": "nodemonlearning",
+  "version": "1.0.0",
+  "description": "test app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Prakhar Sambhav",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

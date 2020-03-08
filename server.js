@@ -7,6 +7,19 @@ const senddata = [
 ]; 
 const server = http.createServer((req,res)=>{
     console.log("hello 2");
+    // GET REquest data start
+    let body = [];
+    req.on('data',chunk => {
+        body.push(chunk);
+        // console.log("chunk is "+chunk);
+    }).on('end',()=>{
+        let body1 = Buffer.concat(body);//Sets data in buffer form
+        console.log(body1);
+        let body2 = Buffer.concat(body).toString();//Sets data as a string
+        console.log(body2);
+        console.log(typeof body2);
+    });
+    // GET request data end
     //res.statusCode = 404;//Another way to set 
     //res.setHeader('Content-type','application/json');//Another way to set headers 
 

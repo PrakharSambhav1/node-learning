@@ -7,7 +7,13 @@ const senddata = [
 ]; 
 const server = http.createServer((req,res)=>{
     console.log("hello 2");
-    res.setHeader('Content-type','application/json');
+    //res.statusCode = 404;//Another way to set 
+    //res.setHeader('Content-type','application/json');//Another way to set headers 
+
+    // res.writeHead(statusCode,{Headers comma seperated})
+    res.writeHead(404,{
+        'Content-type':'application/json',
+    });
     res.write(JSON.stringify(senddata));
     res.end(JSON.stringify(senddata));
 });
